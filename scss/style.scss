@@ -1,4 +1,6 @@
-$color: red;
+@import "~bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/variables";
+$color: red ;
 body{
   background-color: $color;
 }
