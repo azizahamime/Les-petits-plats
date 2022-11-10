@@ -6,7 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <button class="btn btn-success p-4"> envoyer</button>
+    <header class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <img src="assets/logo.svg" alt="logo" class="mx-auto">
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="search">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <form class="search-box d-flex p-4 rounded ">
+                <input class="form-control border-0 " type="search" placeholder="Rechercher une recette">
+                <button class="border-0 p-0" >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="32px" height="32px">
+                    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/>
+                  </svg>
+                </button>
+                
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="tags" class="py-4">
+
+      </section>
+      <section id="advanced_search">
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              
+              <form >
+                <select id="ingredients" class="p-4 border-0 rounded bg-primary text-white w-100">
+                  <option> Ingrédients</option>
+                </select>
+              </form>
+            </div>
+            <div class="col-2">
+              
+              <form >
+                <select id="devices" class="p-4 border-0 rounded bg-success text-white w-100">
+                  <option> Appareils</option>
+                </select>
+              </form>
+            </div>
+            <div class="col-2">
+              
+              <form >
+                <select id="utensils" class="p-4 border-0 rounded bg-danger text-white w-100">
+                  <option> Ustensiles</option>
+                </select>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="recipes" class="my-5">
+        <div class="container">
+          <div class="row gx-5 recipes_row">
+            
+          </div>          
+        </div>
+      </section>
+    </main>
+
     <script src="/dist/bundle.js"></script>
   </body>
 </html>
