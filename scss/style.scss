@@ -1,5 +1,7 @@
+@import "custom";
 @import "~bootstrap/scss/bootstrap";
 @import "../node_modules/bootstrap/scss/variables";
+
 body{
   font-family: "lato";
 }
@@ -57,5 +59,12 @@ p{
   margin-bottom: 0;
   .ingredient_title{
     font-weight: bold;
+  }
+}
+.recipe_time {
+  white-space: nowrap;
+  svg{
+  width:25px;
+  height:25px;
   }
 }

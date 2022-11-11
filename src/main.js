@@ -9,7 +9,7 @@ import { recipes} from "../data/recipes.js";
 }*/
 
 function displayRecipe(recipes) {
-  const recipeSection = document.querySelector("#recipes");
+  const recipeSection = document.querySelector(".recipes_container");
   recipes.forEach(rec => {
     const recipeModel = recipeFactory(rec);
     const recipeCard = recipeModel.getRecipeCard();
