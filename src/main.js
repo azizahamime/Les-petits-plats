@@ -3,12 +3,14 @@ import "bootstrap";
 //import axios from "axios";
 import { recipeFactory } from "./factories/recipe.js";
 import { recipes} from "../data/recipes.js";
+import { searchRecipe } from "./utils/search.js";
+const search = document.getElementById("search");
 /*async function getDatas() {
   let data =  axios.get("../data/recipes.json").then((el)=> el.json());
   return data;
 }*/
 
-function displayRecipe(recipes) {
+export function displayRecipe(recipes) {
   const recipeSection = document.querySelector(".recipes_container");
   recipes.forEach(rec => {
     const recipeModel = recipeFactory(rec);
@@ -20,7 +22,10 @@ function displayRecipe(recipes) {
 function init(){
   console.log(recipes);
   displayRecipe(recipes);
- // recipes.forEach(ele =>displayRecipe(ele));
+  search.addEventListener("input",(e)=>{
+    let searchWord = e.target.value;
+    searchRecipe(recipes,searchWord);
+  });
   
 }
 init();
