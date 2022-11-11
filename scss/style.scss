@@ -1,9 +1,10 @@
-@import "custom";
-@import "~bootstrap/scss/bootstrap";
-@import "../node_modules/bootstrap/scss/variables";
+@import "custom.scss";
+////@import "~bootstrap/scss/bootstrap";
+//@import "../node_modules/bootstrap/scss/variables";
 
 body{
   font-family: "lato";
+  background-color: #000;
 }
 *{
   box-sizing: border-box;

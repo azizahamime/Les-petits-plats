@@ -1,5 +1,5 @@
 import "../scss/style.scss";
-import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 //import axios from "axios";
 import { recipeFactory } from "./factories/recipe.js";
 import { recipes} from "../data/recipes.js";
