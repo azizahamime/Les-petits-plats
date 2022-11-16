@@ -39,29 +39,21 @@
       <section id="advanced_search">
         <div class="container">
           <div class="row">
-            <div class="col-2">
+            <div class="col-12">
               
-              <form >
-                <select id="ingredients" class="p-4 border-0 rounded bg-primary text-white w-100">
-                  <option> Ingrédients</option>
-                </select>
-              </form>
-            </div>
-            <div class="col-2">
-              
-              <form >
-                <select id="devices" class="p-4 border-0 rounded bg-success text-white w-100">
-                  <option> Appareils</option>
-                </select>
-              </form>
-            </div>
-            <div class="col-2">
-              
-              <form >
-                <select id="utensils" class="p-4 border-0 rounded bg-danger text-white w-100">
-                  <option> Ustensiles</option>
-                </select>
-              </form>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Ingrédients  
+                </button>
+                <div class="dropdown-menu dropdown-menu-right bg-primary">
+                  <input type="search" id="searchTag" placeholder="Rechercher un ingédient" class="bg-primary border-0 text-white" >
+                  <ul id="tagsContainer">
+                  </ul>
+                  <!--<button class="dropdown-item" type="button">Action</button>
+                  <button class="dropdown-item" type="button">Another action</button>
+                  <button class="dropdown-item" type="button">Something else here</button>-->
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,9 +1,12 @@
-import "../scss/style.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.min.js';
+import "../scss/style.scss";
+
 //import axios from "axios";
 import { recipeFactory } from "./factories/recipe.js";
 import { recipes} from "../data/recipes.js";
 import { searchRecipe } from "./utils/search.js";
+import { displaytags } from "./utils/displayTags.js";
 const search = document.getElementById("search");
 /*async function getDatas() {
   let data =  axios.get("../data/recipes.json").then((el)=> el.json());
@@ -26,6 +29,9 @@ function init(){
     let searchWord = e.target.value;
     searchRecipe(recipes,searchWord);
   });
+
+  displaytags(recipes);
+
   
 }
 init();
