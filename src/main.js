@@ -7,6 +7,7 @@ import { recipeFactory } from "./factories/recipe.js";
 import { recipes} from "../data/recipes.js";
 import { searchRecipe } from "./utils/search.js";
 import { displaytags } from "./utils/displayTags.js";
+//import { searchTags } from "./utils/searchInTags.js";
 const search = document.getElementById("search");
 /*async function getDatas() {
   let data =  axios.get("../data/recipes.json").then((el)=> el.json());
@@ -25,13 +26,11 @@ export function displayRecipe(recipes) {
 function init(){
   console.log(recipes);
   displayRecipe(recipes);
+  displaytags(recipes);
   search.addEventListener("input",(e)=>{
     let searchWord = e.target.value;
     searchRecipe(recipes,searchWord);
   });
-
-  displaytags(recipes);
-
-  
+ // displaytags(recipes);  
 }
 init();
