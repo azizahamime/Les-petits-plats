@@ -141,12 +141,14 @@ p{
     width: 20px;
     height: 20px;
     fill: #fff;
+    margin-left: 17px;
   }
   .tag{
     color:#fff;
-    padding:7px 15px; 
+    padding:10px 15px; 
     margin: 5px 10px;
     display: inline-block;
+    border-radius: 5px;
   }
 }
 //dropdown menu
