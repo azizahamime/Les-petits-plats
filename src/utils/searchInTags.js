@@ -1,3 +1,4 @@
+import { addTags  } from "./addDeleteTags";
 export function searchTags(){
   const ingElements = Array.from(document.querySelectorAll(".ingredients li"));
   const devElements = Array.from(document.querySelectorAll(".devices li"));
@@ -23,4 +24,20 @@ export function searchTags(){
   search(searchIng, ingElements);
   search(searchDev, devElements);
   search(searchUst, ustElements);
+  ingElements.forEach(function(el){
+    el.addEventListener("click",()=>{
+      addTags(el);
+    })
+  })
+  devElements.forEach(function(el){
+    el.addEventListener("click",()=>{
+      addTags(el);
+    })
+  })
+  ustElements.forEach(function(el){
+    el.addEventListener("click",()=>{
+      addTags(el);
+    })
+  })
+  
 }
