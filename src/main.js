@@ -1,7 +1,7 @@
-//import "bootstrap/dist/css/bootstrap.min.css";
-//import 'bootstrap/dist/js/bootstrap.min.js';
-import 'bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap';
 import "../scss/style.scss";
+
 
 //import axios from "axios";
 import { recipeFactory } from "./factories/recipe.js";

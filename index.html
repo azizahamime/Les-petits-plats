@@ -39,19 +39,55 @@
       <section id="advanced_search">
         <div class="container">
           <div class="row">
-            <div class="col-12">
-              
-              <div class="btn-group">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Ingrédients  
+            <div class="col d-inline-flex gap-3">
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle p-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Ingrédients
                 </button>
-                <div class="dropdown-menu dropdown-menu-right bg-primary">
-                  <input type="search" id="searchTag" placeholder="Rechercher un ingédient" class="bg-primary border-0 text-white" >
-                  <ul id="tagsContainer" class="ingredients">
+                <div class="dropdown-menu bg-primary ">
+                  <div class="advanced-search d-inline-flex w-100 align-items-center">
+                    <input type="text" id="search-tag" class="w-100 border-0" placeholder="Rechercher un ingédient">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="close-dropdown">
+                      <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/>
+                    </svg>
+                  </div>
+                  <ul class=" ingredients" aria-labelledby="dropdownMenuButton1">
+                  
                   </ul>
-                  <!--<button class="dropdown-item" type="button">Action</button>
-                  <button class="dropdown-item" type="button">Another action</button>
-                  <button class="dropdown-item" type="button">Something else here</button>-->
+                </div> 
+              </div>
+
+              <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle p-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Appareils
+                </button>
+                <div class="dropdown-menu bg-success ">
+                  <div class="advanced-search d-inline-flex w-100 align-items-center">
+                    <input type="text" id="search-tag" class="w-100 border-0 bg-success" placeholder="Rechercher un appareil">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="close-dropdown">
+                      <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/>
+                    </svg>
+                  </div>
+                  <ul class=" devices" aria-labelledby="dropdownMenuButton1">
+                  
+                  </ul>
+                </div>
+              </div>
+
+              <div class="dropdown">
+                <button class="btn btn-danger dropdown-toggle p-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Ustensils
+                </button>
+                <div class="dropdown-menu bg-danger ">
+                  <div class="advanced-search d-inline-flex w-100 align-items-center">
+                    <input type="text" id="search-tag" class="w-100 border-0 bg-danger" placeholder="Rechercher un ustensil">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="close-dropdown">
+                      <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/>
+                    </svg>
+                  </div>
+                  <ul class=" ustensils" aria-labelledby="dropdownMenuButton1">
+                  
+                  </ul>
                 </div>
               </div>
             </div>

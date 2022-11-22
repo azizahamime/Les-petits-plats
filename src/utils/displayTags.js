@@ -1,6 +1,28 @@
+const buttons = document.querySelectorAll(".dropdown button");
+const closes = document.querySelectorAll(".close-dropdown");
+buttons.forEach(button =>{
+  button.addEventListener("click",function(e){
+    this.nextElementSibling.style = "position:absolute; top:0; left:0;display:block";
+    this.style.opacity ="0";
+
+  })
+}) 
+closes.forEach(close =>{
+  close.addEventListener("click",function(){
+    this.parentNode.parentNode.previousElementSibling.style = "display:block";
+    this.parentNode.parentNode.style ="display:none;";    
+  })
+}) 
 export function displaytags(data){
-  const ingredientsContainer = document.getElementById("tagsContainer");
+  const ingredientsContainer = document.querySelector(".ingredients");
+  const devicesContainer = document.querySelector(".devices");
+  const ustensilsContainer = document.querySelector(".ustensils");
+
   ingredientsContainer.innerHTML ="";
+  devicesContainer.innerHTML = "";
+  ustensilsContainer.innerHTML = "";
+
+
   const ingArray = [];
   const ustArray = [];
   const deviceArray = [];
@@ -21,5 +43,16 @@ export function displaytags(data){
     let tagName = document.createElement("li");
     tagName.innerHTML = `<li class="dropdown-item">${ing}</li>` ;
     ingredientsContainer.append(tagName);
+  });
+  console.log(deviceArr);
+  deviceArr.forEach(dev =>{
+    let tagName = document.createElement("li");
+    tagName.innerHTML = `<li class="dropdown-item">${dev}</li>` ;
+    devicesContainer.append(tagName);
+  });
+  ustensilsArr.forEach(ust =>{
+    let tagName = document.createElement("li");
+    tagName.innerHTML = `<li class="dropdown-item">${ust}</li>` ;
+    ustensilsContainer.append(tagName);
   });
 }
