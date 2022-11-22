@@ -83,7 +83,6 @@ p{
     font-size: 18px;
     line-height: 22px;
     color: #FFFFFF;
-    width: 200px;
   }
   .btn-primary{
     background-color: $primary;
@@ -127,6 +126,9 @@ p{
       padding-left: 0;
       li{
         color: #fff;
+        &.hidden{
+          display: none;
+        }
       }
     }
     

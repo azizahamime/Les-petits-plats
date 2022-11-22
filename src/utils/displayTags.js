@@ -1,3 +1,4 @@
+import { searchTags  } from "./searchInTags";
 const buttons = document.querySelectorAll(".dropdown button");
 const closes = document.querySelectorAll(".close-dropdown");
 buttons.forEach(button =>{
@@ -36,23 +37,26 @@ export function displaytags(data){
   const uniqueDevice = new Set(deviceArray.sort());
 
   const ingredientArr = [...uniqueIng];
-  console.log(ingredientArr);
   const ustensilsArr = [...uniqueUst];
   const deviceArr = [...uniqueDevice];
   ingredientArr.forEach(ing =>{
     let tagName = document.createElement("li");
-    tagName.innerHTML = `<li class="dropdown-item">${ing}</li>` ;
+    tagName.classList.add('dropdown-item');
+    tagName.innerHTML = `${ing}` ;
     ingredientsContainer.append(tagName);
   });
-  console.log(deviceArr);
   deviceArr.forEach(dev =>{
     let tagName = document.createElement("li");
-    tagName.innerHTML = `<li class="dropdown-item">${dev}</li>` ;
+    tagName.classList.add('dropdown-item');
+    tagName.innerHTML = `${dev}` ;
     devicesContainer.append(tagName);
   });
   ustensilsArr.forEach(ust =>{
     let tagName = document.createElement("li");
-    tagName.innerHTML = `<li class="dropdown-item">${ust}</li>` ;
+    tagName.classList.add('dropdown-item');
+    tagName.innerHTML = `${ust}` ;
     ustensilsContainer.append(tagName);
   });
+  searchTags();
+  
 }
