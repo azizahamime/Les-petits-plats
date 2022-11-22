@@ -1,5 +1,26 @@
 export function searchTags(){
-  const tagsElement = document.querySelectorAll(".ingredients li");
-   
+  const ingElements = Array.from(document.querySelectorAll(".ingredients li"));
+  const devElements = Array.from(document.querySelectorAll(".devices li"));
+  const ustElements = Array.from(document.querySelectorAll(".ustensils li"));
 
+  const searchIng = document.getElementById("search-ing");
+  const searchDev = document.getElementById("search-dev");
+  const searchUst = document.getElementById("search-ust");
+
+  function search(event,tab){
+    event.addEventListener("input",function(e){
+      const wordToFind = e.target.value;
+      tab.forEach(el=>{
+        if(!(el.textContent.toLowerCase().includes(wordToFind.toLowerCase()))){
+          el.classList.add("hidden");
+        } else {
+          el.classList.remove("hidden");
+        }
+      })
+    })
+  }
+
+  search(searchIng, ingElements);
+  search(searchDev, devElements);
+  search(searchUst, ustElements);
 }
