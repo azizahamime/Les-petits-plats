@@ -1,11 +1,11 @@
 import { addTags  } from "./addDeleteTags";
 export function searchTags(){
   const ingElements = Array.from(document.querySelectorAll(".ingredients li"));
-  const devElements = Array.from(document.querySelectorAll(".devices li"));
+  const appElements = Array.from(document.querySelectorAll(".appliances li"));
   const ustElements = Array.from(document.querySelectorAll(".ustensils li"));
 
   const searchIng = document.getElementById("search-ing");
-  const searchDev = document.getElementById("search-dev");
+  const searchApp = document.getElementById("search-app");
   const searchUst = document.getElementById("search-ust");
 
   function search(event,tab){
@@ -22,22 +22,17 @@ export function searchTags(){
   }
 
   search(searchIng, ingElements);
-  search(searchDev, devElements);
+  search(searchApp, appElements);
   search(searchUst, ustElements);
+
   ingElements.forEach(function(el){
-    el.addEventListener("click",()=>{
-      addTags(el);
-    })
+    el.addEventListener("click",()=>{addTags(el);})  
   })
-  devElements.forEach(function(el){
-    el.addEventListener("click",()=>{
-      addTags(el);
-    })
+  appElements.forEach(function(el){
+    el.addEventListener("click",()=>{ addTags(el);})
   })
   ustElements.forEach(function(el){
-    el.addEventListener("click",()=>{
-      addTags(el);
-    })
+    el.addEventListener("click",()=>{ addTags(el);})
   })
   
 }

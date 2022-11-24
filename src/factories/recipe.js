@@ -45,7 +45,7 @@ export function recipeFactory(data) {
     ingredients.forEach(ingredient => {
       const recipeIng = document.createElement("p");
       recipeIng.innerHTML = `
-        <span class="ingredient_title">${ingredient.ingredient}:</span> ${ingredient.quantity} ${ingredient.unit ? ingredient.unit:"" } 
+        <span class="ingredient_title">${ingredient.ingredient}</span> ${ingredient.quantity ? ":"+ ingredient.quantity : ""} ${ingredient.unit ? ingredient.unit : "" } 
       `; 
       recipeIngredients.append(recipeIng);
     });

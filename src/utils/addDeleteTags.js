@@ -5,7 +5,7 @@ export function addTags(arg){
 
  if(arg.parentNode.classList.contains("ingredients")){
    tag.classList.add("bg-primary");
-  } else if(arg.parentNode.classList.contains("devices")){
+  } else if(arg.parentNode.classList.contains("appliances")){
     tag.classList.add("bg-success");
   }else if (arg.parentNode.classList.contains("ustensils")){
     tag.classList.add("bg-danger");
