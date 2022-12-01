@@ -1,27 +1,69 @@
+import { displayRecipe } from "../main";
+import { availableRecipes, filter,tags } from "./filterTag";
+import { recipes } from "../../data/recipes";
 const  tagsContainer = document.getElementById("tags");
 export function addTags(arg){
-  const tag = document.createElement("div");
-  tag.classList.add("tag");
-
- if(arg.parentNode.classList.contains("ingredients")){
-   tag.classList.add("bg-primary");
-  } else if(arg.parentNode.classList.contains("appliances")){
-    tag.classList.add("bg-success");
-  }else if (arg.parentNode.classList.contains("ustensils")){
-    tag.classList.add("bg-danger");
-  }
-  arg = arg.textContent;
-  tag.innerHTML = `${arg} <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="close"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>`;
-  
-  tagsContainer.append(tag);
-  deleteTags();
-}
-function deleteTags(){
-  const closes = Array.from(document.querySelectorAll("#tags .close"));
-
-  closes.forEach(close=>{
-    close.addEventListener("click",function(){
-      close.parentNode.remove();
+  const tags = Array.from(document.querySelectorAll(".tag"));
+  if (tags.length === 0){
+    createTag(arg);
+  } else {
+    let state = false;
+    tags.forEach(tag =>{
+      if (tag.textContent === arg.textContent){
+        state = true;
+      }
     })
-  })
+    if(!state){
+      createTag(arg);
+    }
+  }
+  function createTag(arg){
+    const tag = document.createElement("div");
+    tag.classList.add("tag");
+    if(arg.parentNode.classList.contains("ingredients")){
+      tag.classList.add("bg-primary","ingredientTag");
+    } else if(arg.parentNode.classList.contains("appliances")){
+      tag.classList.add("bg-success","applianceTag");
+    }else if (arg.parentNode.classList.contains("ustensils")){
+      tag.classList.add("bg-danger","ustensilTag");
+    }
+    arg = arg.textContent;
+    tag.textContent = arg;
+    const close = document.createElement("img");
+    close.setAttribute("src","../../assets/close.svg");
+    close.setAttribute("alt","close tag");
+    close.classList.add("close");
+    close.onclick = deleteTags;
+    tag.append(close);
+  
+    tagsContainer.append(tag);
+  } 
+}
+
+function deleteTags(e){
+  const tag = e.target.parentNode;
+  const tagRemove = tag.textContent; 
+  tag.remove();
+  filter(recipes,tags);
+  //const recipesTag = availableRecipes();
+  if (tag.classList.contains("ingredientTag")){
+    const index = tags.ingredients.indexOf(tagRemove);
+    tags.ingredients.splice(index);
+    console.log(tags.ingredients);
+    filter(recipes,tags);
+
+  } 
+  if (tag.classList.contains("applianceTag")){
+    const index = tags.appliances.indexOf(tagRemove);
+    tags.appliances.splice(index);
+    filter(recipes,tags);
+
+  } 
+  if (tag.classList.contains("ustensilTag")){
+    const index = tags.ustensils.indexOf(tagRemove);
+    tags.ustensils.splice(index);
+    filter(recipes,tags);
+
+  }     
+
 }

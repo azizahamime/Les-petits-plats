@@ -10,13 +10,13 @@ export function searchRecipe(data, word){
   let arrayAfterFilter = [];
   const recipeSection = document.querySelector(".recipes_container");
 
-  if (word.length < 3){
+  /*if (word.length < 3){
     // si le nombre de caractére est < 3 afficher toute les recettes
     recipeSection.innerHTML ="";
     displayRecipe(data);
     displaytags(data);
-  } else {
-
+  } */ 
+  if(word.length >= 3) {
     // filtrer les recettes selon le titre ou la description ou ingredients
     arrayAfterFilter = data.filter(recipe => recipe.name.toLowerCase().includes(word.toLowerCase()) || recipe.description.toLowerCase().includes(word.toLowerCase()) || recipe.ingredients.find(ing =>ing.ingredient.toLowerCase().includes(word.toLowerCase()))  );
 

@@ -3,14 +3,14 @@ const buttons = document.querySelectorAll(".dropdown button");
 const closes = document.querySelectorAll(".close-dropdown");
 buttons.forEach(button =>{
   button.addEventListener("click",function(e){
-    this.nextElementSibling.style = "position:absolute; top:0; left:0;display:block";
+    this.nextElementSibling.style = "position:relative; top:-55px; left:0;display:block";
     this.style.opacity ="0";
 
   })
 }) 
 closes.forEach(close =>{
   close.addEventListener("click",function(){
-    this.parentNode.parentNode.previousElementSibling.style = "display:block";
+    this.parentNode.parentNode.previousElementSibling.style = "display:relative";
     this.parentNode.parentNode.style ="display:none;";    
   })
 }) 
