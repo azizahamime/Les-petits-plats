@@ -14,14 +14,16 @@ export function searchTags(){
 
   function search(event,tab){
     event.addEventListener("input",function(e){
-      const wordToFind = e.target.value;
-      tab.forEach(el=>{
-        if(!(el.textContent.toLowerCase().includes(wordToFind.toLowerCase()))){
-          el.classList.add("hidden");
-        } else {
-          el.classList.remove("hidden");
-        }
-      })
+      const wordToFind = e.target.value.toLowerCase();
+      if (wordToFind.length >2){
+        tab.forEach(el=>{
+          if(!(el.textContent.toLowerCase().includes(wordToFind))){
+            el.classList.add("hidden");
+          } else {
+            el.classList.remove("hidden");
+          }
+        })
+      }
     })
   }
 
@@ -30,20 +32,25 @@ export function searchTags(){
   search(searchUst, ustElements);
 
   ingElements.forEach(function(el){
-    el.addEventListener("click",()=>{addTags(el);
+    el.addEventListener("click",()=>{
+      addTags(el);
       filterTag(el,"ingredient");
+      searchIng.value = "";
+
     })  
   })
 
   appElements.forEach(function(el){
     el.addEventListener("click",()=>{ addTags(el);
       filterTag(el,"appliance");
+      searchApp.value = "";
     }) 
   })
   
   ustElements.forEach(function(el){
     el.addEventListener("click",()=>{ addTags(el);
       filterTag(el,"ustensil");
+      searchUst.value = "";
     })
   })
   
