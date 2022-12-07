@@ -14,18 +14,24 @@ export function searchTags(){
   const searchApp = document.getElementById("search-app");
   const searchUst = document.getElementById("search-ust");
 
+  /** 
+   * @param {HTMLElement} event 
+   * @param {array} tab 
+   */
   function search(event,tab){
     event.addEventListener("input",function(e){
       const wordToFind = e.target.value.toLowerCase();
-      if (wordToFind.length >2){
-        tab.forEach(el=>{
+      tab.forEach(el=>{
+        if( wordToFind.length <= 2){
+          el.classList.remove("hidden");
+        } else if (wordToFind.length >2){
           if(!(el.textContent.toLowerCase().includes(wordToFind))){
             el.classList.add("hidden");
           } else {
             el.classList.remove("hidden");
           }
-        })
-      }
+        }
+      }) 
     })
   }
 
