@@ -7,13 +7,13 @@ import { searchRecipe } from "./utils/search.js";
 import { displaytags } from "./utils/displayTags.js";
 import { filter,tags } from "./utils/filterTag";
 
-//import axios from "axios";
-/*async function getDatas() {
-  let data =  axios.get("../data/recipes.json").then((el)=> el.json());
-  return data;
-}*/
+
 const search = document.getElementById("search");
 
+/**
+ * @param {ArrayOfObjects} recipes 
+ * Affichage de recettes a partir de tableau d'objets recipes
+*/
 
 export function displayRecipe(recipes) {
   const recipeSection = document.querySelector(".recipes_container");
@@ -25,8 +25,8 @@ export function displayRecipe(recipes) {
   });
 }
 
+// fonction principale
 function init(){
-  console.log(recipes);
   displayRecipe(recipes);
   displaytags(recipes);
   search.addEventListener("input",(e)=>{
@@ -34,6 +34,5 @@ function init(){
     searchRecipe(recipes,searchWord);
     filter(recipes,tags);
   });
- // displaytags(recipes);  
 }
 init();

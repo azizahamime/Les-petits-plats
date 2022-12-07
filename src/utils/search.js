@@ -5,6 +5,8 @@ import { displaytags } from "./displayTags.js";
 
 /**
  * @param {array} data 
+ * @param { string} word 
+ * chercher word dans nom,ingredients et la description dans le tableau de recettes array et afficher les recettes correspondantes sinon afficher un message
  */
 export function searchRecipe(data, word){
   let arrayAfterFilter = [];
@@ -25,8 +27,6 @@ export function searchRecipe(data, word){
 
     //s'il y a pas une recette qui correspond au caractéres recherchés afficher un message sino afficher les recettes
     if (arrayAfterFilter.length === 0) {
-      console.log("hello");
-      console.log(arrayAfterFilter);
       displaytags(data);
       message.style.display = "block";
       recipeSection.innerHTML =""; 

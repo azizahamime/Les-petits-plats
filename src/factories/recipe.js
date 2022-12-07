@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {array} data 
+ * @returns {HTMLElement} getRecipeCard
+ */
 export function recipeFactory(data) {
   const {name, time, ingredients, description} = data;
   function getRecipeCard() {

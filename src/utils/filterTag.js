@@ -10,6 +10,12 @@ export let tags ={
   ustensils:[]
 }
 
+/**
+ * @param {HTMLElement} tag 
+ * @param {string} cat categorie
+ * si categorie de tag est ingredient on lajoute au tableau ingredient ,s'il est cat ustensils on lajoute au tableau ustensils...
+ */
+
 export function filterTag(tag,cat){
   const recipesTag = availableRecipes();
   
@@ -26,11 +32,13 @@ export function filterTag(tag,cat){
       tags.ustensils.push(tag.textContent);
     }
   }
-  console.warn(tags.ingredients);
-  
   filter(recipesTag,tags);  
 }
 
+/**
+ * @returns {array} recipesTag
+ * recupérer les tags disponibles
+ */
 export function availableRecipes(){
   const recipesTag =[];
 
@@ -45,15 +53,18 @@ export function availableRecipes(){
   return recipesTag;
 }
 
+/**
+ * @param {array} recipesTag 
+ * @param {object} tags 
+ * filtrer les recette selon les tag disponibles
+ */
 export function filter(recipesTag,tags){
-  const wordSearch = document.getElementById("search").value; 
-  console.error(wordSearch);
+  let wordSearch = document.getElementById("search").value; 
   if(wordSearch !==""){
     searchRecipe(recipes,wordSearch);
     recipesTag = availableRecipes();
   }
   const filtredRecipes = recipesTag.filter(el=>(tags.ingredients.every(tag=>el.ingredients.map(ing=>ing.ingredient).includes(tag))) && (tags.appliances.every(apTag =>el.appliance.includes(apTag))) && (tags.ustensils .every(ustTag=>el.ustensils.map(ust=>ust).includes(ustTag))));
-  console.log(filtredRecipes);
   displayRecipe(filtredRecipes);
   displaytags(filtredRecipes);
 }

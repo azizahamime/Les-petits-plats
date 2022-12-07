@@ -32,14 +32,10 @@ export function displaytags(data){
     el.ustensils.forEach(ust => ustArray.push(ust));
     applArray.push(el.appliance);
   });
-  //const uniqueIng = new Set(ingArray.sort());
- // const uniqueUst = new Set(ustArray.sort());
-  //const uniqueDevice = new Set(applArray.sort());
-
+  
   const ings= [...new Set(ingArray.sort())];
   const ustensilsArr = [...new Set (ustArray.sort())];
   const applianceArr = [...new Set(applArray.sort())];
-  console.error(ingredientArr);
   let plurialArr =[];
   ings.forEach(el=>{
     const plurial = el+"s";
@@ -51,9 +47,7 @@ export function displaytags(data){
   })
 
   const ingredientArr = ings.filter(value => !plurialArr.includes(value));
-      
-    
-
+   
   ingredientArr.forEach(ing =>{
     let tagName = document.createElement("li");
     tagName.classList.add('dropdown-item');
