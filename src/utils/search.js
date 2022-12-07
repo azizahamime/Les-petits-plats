@@ -9,23 +9,30 @@ import { displaytags } from "./displayTags.js";
 export function searchRecipe(data, word){
   let arrayAfterFilter = [];
   const recipeSection = document.querySelector(".recipes_container");
+  const message = document.querySelector(".message-norecipes");
 
-  /*if (word.length < 3){
+  if (word.length < 3){
     // si le nombre de caractére est < 3 afficher toute les recettes
     recipeSection.innerHTML ="";
+    message.style.display = "none";
+
     displayRecipe(data);
     displaytags(data);
-  } */ 
+  }  
   if(word.length >= 3) {
     // filtrer les recettes selon le titre ou la description ou ingredients
-    arrayAfterFilter = data.filter(recipe => recipe.name.toLowerCase().includes(word.toLowerCase()) || recipe.description.toLowerCase().includes(word.toLowerCase()) || recipe.ingredients.find(ing =>ing.ingredient.toLowerCase().includes(word.toLowerCase()))  );
+    arrayAfterFilter = data.filter(recipe => recipe.name.toLowerCase().includes(word.toLowerCase()) || recipe.description.toLowerCase().includes(word.toLowerCase()) || recipe.ingredients.find(ing =>ing.ingredient.toLowerCase().includes(word.toLowerCase())) );
 
     //s'il y a pas une recette qui correspond au caractéres recherchés afficher un message sino afficher les recettes
     if (arrayAfterFilter.length === 0) {
-      recipeSection.innerHTML = `<h2 class="text-center">Aucune recette ne correspond à votre critère… <br> vous pouvez chercher « tarte aux pommes », « poisson », etc.</h2>`; 
+      console.log("hello");
+      console.log(arrayAfterFilter);
       displaytags(data);
+      message.style.display = "block";
+      recipeSection.innerHTML =""; 
     } else {
       recipeSection.innerHTML = "";
+      message.style.display = "none";
       displayRecipe(arrayAfterFilter);
       displaytags(arrayAfterFilter);
     }

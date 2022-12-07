@@ -49,10 +49,8 @@ export function displaytags(data){
       }
     })
   })
-  console.log(plurialArr);
 
   const ingredientArr = ings.filter(value => !plurialArr.includes(value));
-  console.log(ingredientArr);
       
     
 
