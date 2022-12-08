@@ -42,11 +42,11 @@ export function recipeFactory(data) {
     figcaption.append(recipeHeader);
     //contenu recette
     const descriptionContent = document.createElement("div");
-    descriptionContent.classList.add("description","p-3","d-flex","card-text");
+    descriptionContent.classList.add("description","p-3","card-text","d-flex");
     figcaption.append(descriptionContent);
     //container ingredient
     const recipeIngredients = document.createElement("div");
-    recipeIngredients.classList.add("recipe_ingredient","w-50");
+    recipeIngredients.classList.add("recipe_ingredient");
     ingredients.forEach(ingredient => {
       const recipeIng = document.createElement("p");
       recipeIng.innerHTML = `

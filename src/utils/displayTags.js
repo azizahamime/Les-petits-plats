@@ -1,6 +1,6 @@
 import { searchTags  } from "./searchInTags";
 
-const buttons = document.querySelectorAll(".dropdown button");
+const buttons = document.querySelectorAll(".drop-down button");
 const closes = document.querySelectorAll(".close-dropdown");
 
 //ouvrir le dropdown liste de recherche avancé au click sur les boutons
@@ -14,7 +14,7 @@ buttons.forEach(button =>{
 //Fermer les dropdown liste de recherche avancé au click sur les boutons
 closes.forEach(close =>{
   close.addEventListener("click",function(){
-    this.parentNode.parentNode.previousElementSibling.style = "display:relative";
+    this.parentNode.parentNode.previousElementSibling.style = "display:block";
     this.parentNode.parentNode.style ="display:none;";    
   })
 }) 
