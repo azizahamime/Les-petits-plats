@@ -64,7 +64,7 @@ export function filter(recipesTag,tags){
     searchRecipe(recipes,wordSearch);
     recipesTag = availableRecipes();
   }
-  const filtredRecipes = recipesTag.filter(el=>(tags.ingredients.every(tag=>el.ingredients.map(ing=>ing.ingredient).includes(tag))) && (tags.appliances.every(apTag =>el.appliance.includes(apTag))) && (tags.ustensils .every(ustTag=>el.ustensils.map(ust=>ust).includes(ustTag))));
+  const filtredRecipes = recipesTag.filter(el=>(tags.ingredients.every(tag=>el.ingredients.map(ing=>ing.ingredient.toLowerCase()).includes(tag.toLowerCase()))) && (tags.appliances.every(apTag =>el.appliance.toLowerCase().includes(apTag.toLowerCase()))) && (tags.ustensils.every(ustTag=>el.ustensils.map(ust=>ust.toLowerCase()).includes(ustTag.toLowerCase()))));
   displayRecipe(filtredRecipes);
   displaytags(filtredRecipes);
 }

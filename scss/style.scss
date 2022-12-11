@@ -110,7 +110,6 @@ body{
 
 
 .drop-down {
-  position: relative;
   button{
     font-family: 'Lato';
     font-weight: 700;
@@ -118,6 +117,8 @@ body{
     line-height: 22px;
     color: #FFFFFF;
     border:none;
+    position: relative;
+
   }
  
   .dropdown-menu{

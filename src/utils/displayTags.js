@@ -37,8 +37,8 @@ export function displaytags(data){
   
   data.forEach(el=>{
     el.ingredients.forEach(ing => ingArray.push(ing.ingredient));
-    el.ustensils.forEach(ust => ustArray.push(ust));
-    applArray.push(el.appliance);
+   el.ustensils.forEach(ust => ustArray.push(ust));
+   applArray.push(el.appliance);
   });
   
   //eliminer les ingredients doubles
