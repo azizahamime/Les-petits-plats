@@ -21,6 +21,8 @@ export function searchRecipe(data, word){
 		displayRecipe(data);
 		displaytags(data);
 	}  
+
+	
 	function ingredientFound (el,word){
 		let ingredients = el.ingredients;
 		let value = false;
@@ -41,8 +43,6 @@ export function searchRecipe(data, word){
 				arrayAfterFilter.push(data[i]);
 			}
 		}
-		console.log(arrayAfterFilter);
-
 		//s'il y a pas une recette qui correspond au caractéres recherchés afficher un message sino afficher les recettes
 		if (arrayAfterFilter.length === 0) {
 			displaytags(data);
