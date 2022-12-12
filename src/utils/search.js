@@ -7,7 +7,7 @@ import { displaytags } from "./displayTags.js";
  * @param {array} data 
  * @param { string} word 
  * chercher word dans nom,ingredients et la description dans le tableau de recettes array et afficher les recettes correspondantes sinon afficher un message
- */
+*/
 export function searchRecipe(data, word){
   let arrayAfterFilter = [];
   const recipeSection = document.querySelector(".recipes_container");

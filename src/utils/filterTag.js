@@ -14,8 +14,7 @@ export let tags ={
  * @param {HTMLElement} tag 
  * @param {string} cat categorie
  * si categorie de tag est ingredient on lajoute au tableau ingredient ,s'il est cat ustensils on lajoute au tableau ustensils...
- */
-
+*/
 export function filterTag(tag,cat){
   const recipesTag = availableRecipes();
   
@@ -38,11 +37,11 @@ export function filterTag(tag,cat){
 /**
  * @returns {array} recipesTag
  * recupérer les tags disponibles
- */
+*/
 export function availableRecipes(){
   const recipesTag =[];
-
   const presentRecipe = Array.from(document.querySelectorAll(".recipe_title"));
+
   presentRecipe.forEach(el=>{
     recipes.forEach(recipe =>{
       if(el.textContent === recipe.name){
@@ -57,7 +56,7 @@ export function availableRecipes(){
  * @param {array} recipesTag 
  * @param {object} tags 
  * filtrer les recette selon les tag disponibles
- */
+*/
 export function filter(recipesTag,tags){
   let wordSearch = document.getElementById("search").value; 
   if(wordSearch !==""){

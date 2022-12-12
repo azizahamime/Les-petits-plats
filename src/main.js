@@ -14,7 +14,6 @@ const search = document.getElementById("search");
  * @param {ArrayOfObjects} recipes 
  * Affichage de recettes a partir de tableau d'objets recipes
 */
-
 export function displayRecipe(recipes) {
   const recipeSection = document.querySelector(".recipes_container");
   recipeSection.innerHTML = "";

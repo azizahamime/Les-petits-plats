@@ -1,5 +1,4 @@
 /**
- * 
  * @param {array} data 
  * @returns {HTMLElement} getRecipeCard
  */
@@ -11,7 +10,7 @@ export function recipeFactory(data) {
     column.classList.add("col");
     //creer figure qui contient le contenu de la recette
     const figure = document.createElement("figure");
-    figure.classList.add("rounded","card","h-100");
+    figure.classList.add("rounded","card","h-100","w-100","border-0");
     column.append(figure);
     //creer la baniére de la recette
     const photo = document.createElement("div");
@@ -23,7 +22,7 @@ export function recipeFactory(data) {
     figure.append(figcaption);
     figcaption.classList.add("card-body");
     const recipeHeader = document.createElement("div");
-    recipeHeader.classList.add("recipe_header","p3","d-flex","card-title");
+    recipeHeader.classList.add("recipe_header","p-3","d-flex","card-title","g-4", "justify-content-between");
     //ajouter le titre
     const recipeTitle = document.createElement("h4");
     recipeTitle.classList.add("recipe_title");
@@ -42,7 +41,7 @@ export function recipeFactory(data) {
     figcaption.append(recipeHeader);
     //contenu recette
     const descriptionContent = document.createElement("div");
-    descriptionContent.classList.add("description","p-3","card-text","d-flex");
+    descriptionContent.classList.add("description","p-3","card-text","d-flex","g-4","justify-content-between");
     figcaption.append(descriptionContent);
     //container ingredient
     const recipeIngredients = document.createElement("div");

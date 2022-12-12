@@ -17,7 +17,7 @@ export function searchTags(){
   /** 
    * @param {HTMLElement} event 
    * @param {array} tab 
-   */
+  */
   function search(event,tab){
     event.addEventListener("input",function(e){
       const wordToFind = e.target.value.toLowerCase();
@@ -43,7 +43,6 @@ export function searchTags(){
    * @param {HTMLEvent} el
    * au click sur un ingredient un tag sera ajouter les recettes affichées seront mises à jour
   */
-
   ingElements.forEach(function(el){
     el.addEventListener("click",()=>{
       addTags(el);
@@ -52,11 +51,11 @@ export function searchTags(){
     })  
   })
 
+
   /**
    * @param {HTMLEvent} el
    * au click sur un appareil un tag sera ajouter les recettes affichées seront mises à jour
   */
-
   appElements.forEach(function(el){
     el.addEventListener("click",()=>{ 
       addTags(el);
@@ -65,11 +64,11 @@ export function searchTags(){
     }) 
   })
 
+
   /**
    * @param {HTMLEvent} el
    * au click sur un ustensil  un tag sera ajouter les recettes affichées seront mises à jour
   */
-
   ustElements.forEach(function(el){
     el.addEventListener("click",()=>{ 
       addTags(el);

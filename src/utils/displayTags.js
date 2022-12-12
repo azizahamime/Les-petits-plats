@@ -6,8 +6,17 @@ const closes = document.querySelectorAll(".close-dropdown");
 //ouvrir le dropdown liste de recherche avancé au click sur les boutons
 buttons.forEach(button =>{
   button.addEventListener("click",function(e){
-    this.nextElementSibling.style = "position:relative; top:-55px; left:0;display:block";
-    this.style.opacity ="0";
+    this.nextElementSibling.style = "position: relative;top:0;left:0;display:block";
+    this.style.display ="none";
+    
+   
+    buttons.forEach(el=>{
+      if (el.textContent !== this.textContent){
+        el.parentElement.firstElementChild.style.display="block";
+        el.parentElement.lastElementChild.style.display="none";
+      }
+    })
+
   })
 })
 
@@ -21,7 +30,7 @@ closes.forEach(close =>{
 
 /**
  * @param {array} data 
- */
+*/
 export function displaytags(data){
   const ingredientsContainer = document.querySelector(".ingredients");
   const appliancesContainer = document.querySelector(".appliances");
@@ -81,6 +90,5 @@ export function displaytags(data){
     tagName.innerHTML = `${ust}` ;
     ustensilsContainer.append(tagName);
   });
-  searchTags();
-  
+  searchTags(); 
 }
