@@ -99,10 +99,16 @@ body{
     width: 150px;
     text-align: left;
     position: relative;
-    &::after{
+    svg{
+      fill:#fff;
+      width: 20px;
+      height: 20px;
       position: absolute;
-      top:45%;
-      right:10px;
+      right: 10px;
+      font-weight: 700;
+    }
+    &::after{
+      border: 0;      
     }
   }
   .dropdown-menu{
