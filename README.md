@@ -2,7 +2,7 @@
 # Les-petits-plats
 
 ## Présentation
-Les petits plats c'est un site de cuisine.
+Les petits plats est un site de cuisine.
 Ce site permet a une entreprise d'exposer ses recettes de cuisines qui se trouvent dans des livres qui a edité pendant plusieurs années.
 ___
 ## Objectifs du projet
