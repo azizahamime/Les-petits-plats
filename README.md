@@ -1,4 +1,5 @@
-# Les-petits-plats# Projet : Développez un algorithme de recherche en JavaScript 
+# Projet : Développez un algorithme de recherche en JavaScript 
+# Les-petits-plats
 
 ## Présentation
 Les petits plats c'est un site de cuisine.
