@@ -24,7 +24,7 @@ ___
   
 ___
 ## Fonctionnalités demandées
-### :One: Le site
+### :one: Le site
 * Les pages devront passer la validation W3C en HTML et CSS sans erreurs.
 * Doit étre responsive.
 ### :two: Page index
