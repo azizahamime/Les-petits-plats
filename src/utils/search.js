@@ -21,10 +21,28 @@ export function searchRecipe(data, word){
 		displayRecipe(data);
 		displaytags(data);
 	}  
+
+	
+	function ingredientFound (el,word){
+		let ingredients = el.ingredients;
+		let value = false;
+
+		for (let j=0; j<ingredients.length;j++){
+			if (ingredients[j].ingredient.toLowerCase().includes(word.toLowerCase())){
+				value = true;
+			}
+		}
+		return value;
+	}
+
 	if(word.length >= 3) {
 		// filtrer les recettes selon le titre ou la description ou ingredients
-		arrayAfterFilter = data.filter(recipe => recipe.name.toLowerCase().includes(word.toLowerCase()) || recipe.description.toLowerCase().includes(word.toLowerCase()) || recipe.ingredients.find(ing =>ing.ingredient.toLowerCase().includes(word.toLowerCase())) );
-
+		for (let i=0;i< data.length;i++){
+			if ( (data[i].name.toLowerCase().includes(word.toLowerCase())) || 
+    (data[i].description.toLowerCase().includes(word.toLowerCase())) || (ingredientFound(data[i],word))){
+				arrayAfterFilter.push(data[i]);
+			}
+		}
 		//s'il y a pas une recette qui correspond au caractéres recherchés afficher un message sino afficher les recettes
 		if (arrayAfterFilter.length === 0) {
 			displaytags(data);
@@ -37,4 +55,5 @@ export function searchRecipe(data, word){
 			displaytags(arrayAfterFilter);
 		}
 	} 
+	
 }
